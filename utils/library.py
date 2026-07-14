@@ -47,3 +47,12 @@ class Library:
             return
         for i, book in enumerate(self.books, 1):
             print(f"{i}. {book}")
+        def search_by_author(self, author):
+                                                     """کتاب‌های یک نویسنده رو جستجو کن"""
+        results = [b for b in self.books if author.lower() in b.author.lower()]
+        if results:
+            for book in results:
+                print(book)
+        else:
+            print(f"کتابی از {author} یافت نشد!")
+        return results
