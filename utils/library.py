@@ -56,3 +56,7 @@ class Library:
         else:
             print(f"کتابی از {author} یافت نشد!")
         return results
+    def search_by_genre(self, genre):
+        """کتاب‌های یک ژانر رو جستجو کن"""
+        results = [b for b in self.books if hasattr(b, 'genre') and genre.lower() in b.genre.lower()]
+        return results
